@@ -9,21 +9,47 @@ type IconMapping = Record<SymbolViewProps["name"], ComponentProps<typeof Materia
 type IconSymbolName = keyof typeof MAPPING;
 
 /**
- * Add your SF Symbols to Material Icons mappings here.
- * - see Material Icons in the [Icons Directory](https://icons.expo.fyi).
- * - see SF Symbols in the [SF Symbols](https://developer.apple.com/sf-symbols/) app.
+ * SF Symbols to Material Icons mappings for IPTV Player app.
  */
 const MAPPING = {
+  // Navigation
   "house.fill": "home",
-  "paperplane.fill": "send",
-  "chevron.left.forwardslash.chevron.right": "code",
+  "tv.fill": "live-tv",
+  "heart.fill": "favorite",
+  "calendar": "calendar-today",
+  "gearshape.fill": "settings",
+  // Player controls
+  "play.fill": "play-arrow",
+  "pause.fill": "pause",
+  "forward.fill": "fast-forward",
+  "backward.fill": "fast-rewind",
+  "speaker.wave.2.fill": "volume-up",
+  "speaker.slash.fill": "volume-off",
+  "arrow.up.left.and.arrow.down.right": "fullscreen",
+  "arrow.down.right.and.arrow.up.left": "fullscreen-exit",
+  // UI
+  "magnifyingglass": "search",
+  "xmark": "close",
+  "xmark.circle.fill": "cancel",
+  "chevron.left": "chevron-left",
   "chevron.right": "chevron-right",
+  "chevron.left.forwardslash.chevron.right": "code",
+  "paperplane.fill": "send",
+  "plus": "add",
+  "plus.circle.fill": "add-circle",
+  "trash.fill": "delete",
+  "arrow.clockwise": "refresh",
+  "info.circle": "info",
+  "list.bullet": "list",
+  "square.grid.2x2": "grid-view",
+  "star.fill": "star",
+  "wifi": "wifi",
+  "wifi.slash": "wifi-off",
+  "exclamationmark.triangle.fill": "warning",
 } as IconMapping;
 
 /**
  * An icon component that uses native SF Symbols on iOS, and Material Icons on Android and web.
- * This ensures a consistent look across platforms, and optimal resource usage.
- * Icon `name`s are based on SF Symbols and require manual mapping to Material Icons.
  */
 export function IconSymbol({
   name,
