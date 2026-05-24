@@ -13,16 +13,19 @@ import { ThemeProvider as ThemeProviderWrapper } from "@/lib/theme-provider";
 import { IPTVProvider } from "@/context/IPTVContext";
 import "../global.css";
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+// Splash screen will be prevented from auto-hiding in useEffect inside RootLayout
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({});
 
   useEffect(() => {
+    SplashScreen.preventAutoHideAsync().catch(() => {});
+  }, []);
+
+  useEffect(() => {
     if (loaded) {
-      SplashScreen.hideAsync();
+      SplashScreen.hideAsync().catch(() => {});
     }
   }, [loaded]);
 
